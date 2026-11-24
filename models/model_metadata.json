@@ -1,0 +1,88 @@
+{
+  "model_name": "Logistic Regression",
+  "selection_rule": "highest 5-fold cross-validated F1 (fraudulent class) on the training split",
+  "decision_threshold": 0.5,
+  "probability_note": "Uncalibrated model score; treat as a relative indicator, not a true probability.",
+  "trained_at_utc": "2026-10-29T04:32:07+00:00",
+  "random_seed": 42,
+  "test_size": 0.2,
+  "dataset_path": "C:\\Users\\Sasi Kiran\\OneDrive\\Desktop\\ML_Project\\fake_job_detector\\data\\fake_job_postings.csv",
+  "dataset": {
+    "rows_raw": 17880,
+    "rows_dropped_invalid_label": 0,
+    "rows_dropped_empty_text": 0,
+    "rows_dropped_conflicting_duplicates": 0,
+    "rows_dropped_duplicates": 508,
+    "rows_clean": 17372,
+    "fraud_count": 854,
+    "legit_count": 16518,
+    "fraud_ratio": 0.049159567119502645
+  },
+  "text_fields": [
+    "title",
+    "location",
+    "salary_range",
+    "employment_type",
+    "company_profile",
+    "description",
+    "requirements",
+    "benefits"
+  ],
+  "versions": {
+    "python": "3.14.3",
+    "scikit_learn": "1.9.1",
+    "pandas": "3.1.0"
+  },
+  "results": {
+    "Logistic Regression": {
+      "best_params": {
+        "clf__C": 20
+      },
+      "cv_f1": 0.8694528402584678,
+      "test": {
+        "accuracy": 0.9887769784172662,
+        "precision": 0.9230769230769231,
+        "recall": 0.8421052631578947,
+        "f1": 0.8807339449541285,
+        "macro_f1": 0.9374226874098741,
+        "confusion_matrix": [
+          [
+            3292,
+            12
+          ],
+          [
+            27,
+            144
+          ]
+        ],
+        "roc_auc": 0.9896616541353382,
+        "pr_auc": 0.9324851026645861
+      }
+    },
+    "Multinomial Naive Bayes": {
+      "best_params": {
+        "clf__alpha": 0.01
+      },
+      "cv_f1": 0.8304516251451209,
+      "test": {
+        "accuracy": 0.9827338129496402,
+        "precision": 0.84472049689441,
+        "recall": 0.7953216374269005,
+        "f1": 0.8192771084337349,
+        "macro_f1": 0.9051054626484178,
+        "confusion_matrix": [
+          [
+            3279,
+            25
+          ],
+          [
+            35,
+            136
+          ]
+        ],
+        "roc_auc": 0.9885802075810997,
+        "pr_auc": 0.8909067931176518
+      }
+    }
+  }
+}
